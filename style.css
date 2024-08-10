@@ -214,3 +214,21 @@ a:visited {
 }
 
 /*#endregion layout helper*/
+
+main {
+  background: url('images/IMG_9761_small.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+  padding: 6rem;
+  background-color: #d8d8d8c9;
+  font-size: 2rem;
+  font-family: cursive;
+}
