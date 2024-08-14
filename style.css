@@ -204,25 +204,23 @@ a:visited {
   padding-left: 0;
   margin: 0;
 }
-
-.sil {
-  mask: url(thin_rip.png);
-  mask-size: 100%;
-  mask-repeat: repeat-x;
-  mask-position: 50% 0;
-  width: 100%;
-}
-
 /*#endregion layout helper*/
 
-main {
+
+body {
   background: url('images/IMG_9761_small.jpg');
   height: 100vh;
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main {
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
 }
 
 .text {
@@ -231,4 +229,13 @@ main {
   background-color: #d8d8d8c9;
   font-size: 2rem;
   font-family: cursive;
+}
+
+.footer {
+  display: flex;
+  padding: 1rem;
+  align-content: center;
+  justify-content: center;
+  background-color: #efefef;
+  margin-top: 5rem;
 }
