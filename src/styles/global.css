@@ -1,31 +1,36 @@
 :root {
   --body-width: 1080px;
+  --body-width-margin: max(16px, calc((100vw - 1080px) / 2));
   --h1-size: 7.2rem;
   --h2-size: 4.8rem;
   --h3-size: 3.2rem;
   --h4-size: 2.2rem;
   --h5-size: 1.8rem;
-  --primary1: #9add9c;
-  --primary2: #64a365;
-  --primary3: #446d45;
-  --darker-green: hsl(141 43% 18% / 1);
-  --secondary1: #9bd8f2;
-  --secondary2: #34bae4;
-  --secondary3: #1e87b4;
-  --accent1: #ffe279;
-  --accent2: #f0c425;
-  --accent3: #d1a700;
+  --small-text: 1.5rem;
+  --primary1: #e9ede5;
+  --primary2: #B1C0B3;
+  --accent1: #794a3f;
+  --accent2: #511407;
+  --accent3: #3f1911;
   --gray700: #343734;
   --gray900: #1f201e;
-  --dark-green: rgb(27, 39, 27);
-  --brown: #2a200d;
   --border-radius: 2.5px;
-  --body-font: 'Montserrat', sans-serif;
-  --heading-font: "Permanent Marker", cursive;
+  /* --body-font: 'MinionPro', sans-serif; */
+  --body-font: "Oswald", sans-serif;
+  --heading-font:  "Apple Chancery", sans-serif;
+  /* --heading-font:  "Playfair Display", serif; */
   --body-color: var(--primary2);
   --shadow-light: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
   --shadow-medium: 6px 6px 6px 0 rgba(0, 0, 0, 0.5);
 }
+
+@font-face {
+  font-family: 'Apple Chancery';
+  font-style: normal;
+  font-weight: normal;
+  src: local('fonts/Apple Chancery'), url('fonts/Apple Chancery.woff') format('woff');
+}
+
 /*#region base*/
 * {
   box-sizing: border-box !important;
@@ -35,7 +40,6 @@
 html {
   font-size: 62.5%;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -45,26 +49,53 @@ html {
   }
 }
 
+/* for custom modal, delete if a library is used instead */
 :root:has(.no-document-scroll) {
   overflow: hidden;
 }
 
+.overlay {
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000;
+  transition: opacity;
+  transition-duration: 400ms;
+  opacity: 0;
+  pointer-events: none;
+}
+.no-document-scroll .overlay {
+  cursor: pointer;
+  opacity: 0.6;
+  pointer-events: auto;
+}
+
 body {
-  font-size: 1.7rem;
+  min-height: 100vh;
   margin: 0;
+  font-size: 1.9rem;
   font-family: var(--body-font);
   background-color: #969696;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* not ideal but needed for the mobile menu */
 }
 
 main {
   width: 100%;
   position: relative;
+  flex-grow: 1;
 }
+
 img {
   max-width: 100%;
 }
-
-
 
 h1,
 .h1,
@@ -76,10 +107,11 @@ h4,
 .h4,
 h5,
 .h5 {
-  
   font-weight: 400;
   font-style: normal;
-  margin-top: 0;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1,
@@ -87,7 +119,11 @@ h1,
 h2,
 .h2,
 h3,
-.h3 {
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
   font-family: var(--heading-font);
 }
 
@@ -162,7 +198,6 @@ a:visited {
   color: #0091ff;
   color: var(--accent1);
 }
-
 /*#endregion base*/
 
 /*#region layout helper*/
@@ -204,38 +239,17 @@ a:visited {
   padding-left: 0;
   margin: 0;
 }
+
+.unstyled-input {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  box-shadow: none;
+}
+
 /*#endregion layout helper*/
 
-
-body {
-  background: url('images/IMG_9761_small.jpg');
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.text {
-  text-align: center;
-  padding: 6rem;
-  background-color: #d8d8d8c9;
-  font-size: 2rem;
-  font-family: cursive;
-}
-
-.footer {
-  display: flex;
-  padding: 1rem;
-  align-content: center;
-  justify-content: center;
-  background-color: #efefef;
-  margin-top: 5rem;
-}

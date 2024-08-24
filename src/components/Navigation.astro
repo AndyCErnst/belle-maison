@@ -1,0 +1,180 @@
+---
+import logo from '../images/logo.jpg'
+import { Image } from 'astro:assets'
+---
+
+<div class="nav-wrapper">
+  <nav class="nav">
+    <div class="nav-logo">
+      <a href="/">
+        <Image src={logo} alt="Home" class="nav-logo-image" />
+      </a>
+    </div>
+    <button class="hamburger unstyled-input">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+    <div class="nav-links">
+      <a href="/about/">About</a>
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/testimonials/">Testimonials</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </nav>
+</div>
+
+<script>
+  function toggle () {
+    document.querySelector('body')?.classList.toggle('no-document-scroll')
+    document.querySelector('.nav')?.classList.toggle('expanded')
+  }
+  document.querySelector('.overlay')?.addEventListener('click', toggle)
+  document.querySelector('.hamburger')?.addEventListener('click', toggle)
+</script>
+
+<style>
+  .nav {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    max-width: 122px;
+    margin-left: var(--body-width-margin);
+  }
+  .nav-logo-image {
+    height: auto;
+  }
+  .nav-links {
+    padding: 1rem 2rem;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links > a {
+    display: block;
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .nav-links > a:hover,
+  .nav-links > a:focus {
+    background-color: #00000029;
+  }
+
+  @media screen and (max-width: 635px) {
+    .hamburger {
+      z-index: 110;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      min-width: 0;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 6rem;
+      width: 7rem;
+      padding: 1rem;
+      border-radius: 0;
+    }
+    .hamburger:hover, .hamburger:focus {
+      background-color: transparent;
+    }
+
+    .hamburger > .line {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: white;
+      transform-origin: top left;
+      transition: opacity, transform, background-color;
+      transition-duration: 200ms;
+    }
+    .expanded .line:first-child {
+      background-color: black;
+      transform: rotateZ(45deg) translateX(6px) translateY(-6.5px);
+    }
+    .expanded .line:nth-child(2) {
+      opacity: 0;
+    }
+    .line:last-child {
+      transform-origin: bottom left;
+    }
+    .expanded .line:last-child {
+      background-color: black;
+      transform: rotateZ(-45deg) translateX(6px) translateY(3px);
+    }
+    .nav-links {
+      position: absolute;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 70%;
+      z-index: 100;
+      top: 0;
+      right: 0;
+      padding-top: 10rem;
+      padding-left: 0;
+      padding-right: 0;
+      flex-direction: column;
+      background-color: white;
+      height: 100vh;
+      border-left: 5px solid var(--primary2);
+      transform: translateX(100%);
+      transition: transform;
+      transition-duration: 400ms;
+    }
+    :not(.expanded) .nav-links:focus-within {
+      transition-duration: 0ms;
+      transform: translateX(0%);
+    }
+    .expanded .nav-links {
+      transform: translateX(0%);
+    }
+    .nav-links > a {
+      flex-grow: 0;
+      padding: 2rem;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 636px) {
+    .nav-links {
+      padding: 0;
+      padding-right: var(--body-width-margin);
+      display: flex;
+      margin-left: 6rem;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 85px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-links > a {
+      height: 100%;
+      line-height: 85px;
+      display: inline-block;
+      padding: 0 20px;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 730px) {
+    .nav-links {
+      margin-left: 16rem;
+    }
+    .nav-logo {
+      max-width: 172px;
+    }
+  }
+</style>

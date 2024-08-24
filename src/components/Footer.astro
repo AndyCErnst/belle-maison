@@ -1,0 +1,80 @@
+---
+import logo from '../images/logo.jpg'
+import { Image } from 'astro:assets'
+---
+<style>
+  .footer {
+    border-top: 1rem solid var(--primary2);
+    border-bottom: 1rem solid var(--primary2);
+    background-color: #efefef;
+    margin-top: 5rem;
+  }
+  .footer-blocks {
+    display: flex;
+    padding-bottom: 1rem;
+  }
+  @media all and (max-width: 600px) {
+    .footer-blocks { 
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  .footer-block { 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    flex-grow: 1;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+    border-left: 2px solid var(--primary2);
+  }
+  .footer-block:first-child {
+    flex-grow: 0;
+    flex-basis: auto;
+    margin-right: 2rem;
+    border: none;
+    padding: 0;
+  }
+   .footer-logo-image {
+    width: 200px;
+    height: auto;
+   }
+   .footer-signature {
+    font-family: ;
+   }
+  .copywrite {
+    text-align: center;
+    padding-bottom: 1rem;
+    color: var(--gray700);
+    font-size: var(--small-text);
+  }
+</style>
+<footer class="footer">
+  <div class="body-width footer-blocks">
+    <div class="footer-block">
+      <Image src={logo} alt="Belle Maison Interior Design" class="footer-logo-image" />
+    </div>
+    <ul class="footer-block unstyled-list">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/testimonials/">Testimonials</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+    </ul>
+    <div class="footer-block">
+      <div class="h4">Gina Schorr</div>
+      <div><a href="tel:206-819-3331">206.819.3331</a></div>
+      <div>
+        <a href="email:Gina@BelleMaisonInteriorDesign.com"
+          >Gina@BelleMaisonInteriorDesign.com</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="body-width copywrite">
+    ©&nbsp;<span id="copyright-date">{new Date().getFullYear()}</span> Belle Maison Interior
+    Design. All rights reserved.
+  </div>
+</footer>
