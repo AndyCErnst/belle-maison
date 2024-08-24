@@ -20,26 +20,28 @@ import { Image } from 'astro:assets'
     }
   }
   .footer-block { 
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 1rem;
+    padding-left: 2rem;
     flex-grow: 1;
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 2rem;
     border-left: 2px solid var(--primary2);
   }
-  .footer-block:first-child {
+  .footer-block-image {
     flex-grow: 0;
     flex-basis: auto;
     margin-right: 2rem;
     border: none;
-    padding: 0;
+    padding-left: 0;
   }
    .footer-logo-image {
-    width: 200px;
+    max-width: 180px;
     height: auto;
+    padding: 1rem;
+    border: 2px solid var(--accent2);
    }
    .footer-signature {
     font-family: ;
@@ -53,7 +55,7 @@ import { Image } from 'astro:assets'
 </style>
 <footer class="footer">
   <div class="body-width footer-blocks">
-    <div class="footer-block">
+    <div class="footer-block footer-block-image">
       <Image src={logo} alt="Belle Maison Interior Design" class="footer-logo-image" />
     </div>
     <ul class="footer-block unstyled-list">

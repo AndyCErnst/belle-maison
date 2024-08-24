@@ -2,7 +2,7 @@
 import '../styles/global.css'
 import Navigation from '../components/Navigation.astro'
 import Footer from '../components/Footer.astro'
-const { pageTitle } = Astro.props
+const { pageBackground } = Astro.props
 ---
 
 <!doctype html>
@@ -51,20 +51,37 @@ const { pageTitle } = Astro.props
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bellemaisoninteriordesign.com/" />
-    <!-- <meta property="og:image" content="https://bellemaisoninteriordesign.com/path-to-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Belle Maison Interior Design">
-    <meta name="twitter:description"
-      content="Belle Maison Interior Design, led by Gina Schorr, specializes in creating beautiful, personalized spaces in the Seattle area.">
-    <meta name="twitter:image" content="https://bellemaisoninteriordesign.com/path-to-image.jpg"> -->
+    <meta
+      property="og:image"
+      content="https://bellemaisoninteriordesign.com/apple-touch-icon.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Belle Maison Interior Design" />
+    <meta
+      name="twitter:description"
+      content="Belle Maison Interior Design, led by Gina Schorr, specializes in creating beautiful, personalized spaces in the Seattle area."
+    />
+    <meta
+      name="twitter:image"
+      content="https://bellemaisoninteriordesign.com//apple-touch-icon.png"
+    />
+
+    <style>
+      .page-background {
+        background-color: white;
+        padding: 5rem 4rem;
+        margin-top: 4rem;
+      }
+    </style>
   </head>
   <body>
     <div class="overlay"></div>
     <Navigation />
-    <h1 class="body-width">{pageTitle}</h1>
-    <div class="body-width">
-      <slot />
-    </div>
+    <main class="body-width">
+      <div class={pageBackground ? 'page-background' : ''}>
+        <slot />
+      </div>
+    </main>
     <Footer />
   </body>
 </html>
