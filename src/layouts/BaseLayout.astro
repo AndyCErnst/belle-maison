@@ -2,7 +2,7 @@
 import '../styles/global.css'
 import Navigation from '../components/Navigation.astro'
 import Footer from '../components/Footer.astro'
-const { pageBackground, noNavSpace } = Astro.props
+const { noNavSpace } = Astro.props
 ---
 
 <!doctype html>
@@ -66,19 +66,12 @@ const { pageBackground, noNavSpace } = Astro.props
       content="https://bellemaisoninteriordesign.com//apple-touch-icon.png"
     />
 
-    <style>
-      .page-background {
-        background-color: white;
-        padding: 5rem 4rem;
-        margin-top: 4rem;
-      }
-    </style>
   </head>
   <body>
     <div class="overlay"></div>
     <Navigation noNavSpace={noNavSpace} />
     <main>
-      <div class={pageBackground ? 'page-background' : ''}>
+      <div>
         <slot />
       </div>
     </main>

@@ -8,17 +8,18 @@
   --h5-size: 1.8rem;
   --small-text: 1.5rem;
   --primary1: #e9ede5;
-  --primary2: #B1C0B3;
+  --primary2: #b1c0b3;
   --accent1: #794a3f;
   --accent2: #511407;
   --accent3: #3f1911;
   --gray700: #343734;
   --gray900: #1f201e;
+  --bgColor: #ebebeb;
   --border-radius: 2.5px;
   /* --body-font: 'MinionPro', sans-serif; */
   /* --body-font: "Oswald", sans-serif; */
-  --body-font: "Noto Sans", sans-serif;
-  --heading-font:  "Apple Chancery", sans-serif;
+  --body-font: 'Noto Sans', sans-serif;
+  --heading-font: 'Apple Chancery', sans-serif;
   /* --heading-font:  "Playfair Display", serif; */
   --body-color: var(--primary2);
   --shadow-light: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -48,18 +49,20 @@ html {
 
 @media all and (max-width: 800px) {
   html {
+    /* this affects everything using rem and em */
     font-size: 56.25%;
   }
 }
 
 /* for custom modal, delete if a library is used instead */
+/* Note: custom modals are currently not a11y compliant as they don't block focus on background elements, but it's not a huge issue */
 :root:has(.no-document-scroll) {
   overflow: hidden;
 }
 
 .overlay {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
@@ -81,11 +84,10 @@ body {
   margin: 0;
   font-size: 1.7rem;
   font-family: var(--body-font);
-  background-color: #ebe8e0;
-  background-color: #dedfde;
+  background-color: var(--bgColor);
   font-optical-sizing: auto;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
+  font-variation-settings: 'wdth' 100;
   font-weight: 300;
   display: flex;
   flex-direction: column;
@@ -101,7 +103,6 @@ main {
 img {
   max-width: 100%;
 }
-
 
 h1,
 .h1 {
@@ -214,14 +215,16 @@ a:visited {
   color: var(--accent1);
   text-decoration: none;
 }
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: var(--accent3);
 }
 
 li {
   margin-bottom: 0.5em;
 }
-ul, ol {
+ul,
+ol {
   margin-top: 1rem;
 }
 figure {
@@ -252,13 +255,13 @@ hr {
   overflow: visible;
 }
 hr:after {
-  content: "§";
+  content: '§';
   display: inline-block;
   position: relative;
   top: -2.7rem;
   font-size: 3rem;
   padding: 0 0.15em;
-  background: white;
+  background: var(--bgColor);
   font-family: var(--heading-font);
 }
 /*#endregion base*/
@@ -305,12 +308,12 @@ hr:after {
 
 .unstyled-input {
   background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
   box-shadow: none;
 }
 
@@ -327,4 +330,3 @@ hr:after {
   max-width: 600px;
 }
 /*#endregion layout helper*/
-
