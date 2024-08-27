@@ -4,7 +4,7 @@
   --h1-size: 7.2rem;
   --h2-size: 4.8rem;
   --h3-size: 3.2rem;
-  --h4-size: 2.2rem;
+  --h4-size: 2.4rem;
   --h5-size: 1.8rem;
   --small-text: 1.5rem;
   --primary1: #e9ede5;
@@ -30,7 +30,7 @@
   font-family: 'Apple Chancery';
   font-style: normal;
   font-weight: normal;
-  src: local('fonts/Apple Chancery'), url('fonts/Apple Chancery.woff') format('woff');
+  src: local('/fonts/Apple Chancery'), url('/fonts/Apple Chancery.woff') format('woff');
 }
 
 /*#region base*/
@@ -140,21 +140,25 @@ h5,
 h1,
 .h1 {
   font-size: var(--h1-size);
+  margin-bottom: 4rem;
 }
 
 h2,
 .h2 {
   font-size: var(--h2-size);
+  margin-bottom: 2rem;
 }
 
 h3,
 .h3 {
   font-size: var(--h3-size);
+  margin-bottom: 1.2rem;
 }
 
 h4,
 .h4 {
   font-size: var(--h4-size);
+  margin-bottom: 1rem;
 }
 
 h5,
@@ -164,6 +168,7 @@ h5,
 }
 
 p {
+  margin-top: 0;
   line-height: 1.7;
 }
 
