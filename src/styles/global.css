@@ -260,9 +260,9 @@ hr:after {
   position: relative;
   top: -2.7rem;
   font-size: 3rem;
+  font-family: var(--heading-font);
   padding: 0 0.15em;
   background: var(--bgColor);
-  font-family: var(--heading-font);
 }
 /*#endregion base*/
 
