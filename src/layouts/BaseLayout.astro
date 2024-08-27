@@ -2,7 +2,7 @@
 import '../styles/global.css'
 import Navigation from '../components/Navigation.astro'
 import Footer from '../components/Footer.astro'
-const { pageBackground } = Astro.props
+const { pageBackground, noNavSpace } = Astro.props
 ---
 
 <!doctype html>
@@ -76,8 +76,8 @@ const { pageBackground } = Astro.props
   </head>
   <body>
     <div class="overlay"></div>
-    <Navigation />
-    <main class="body-width">
+    <Navigation noNavSpace={noNavSpace} />
+    <main >
       <div class={pageBackground ? 'page-background' : ''}>
         <slot />
       </div>

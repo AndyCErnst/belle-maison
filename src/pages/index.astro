@@ -1,9 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 ---
-<BaseLayout >
-  <h1>Belle Maison Interior Design</h1>
-    <p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
+
+<style>
+  .hero {
+    background-image: url('../images/IMG_9761.webp');
+    background-size: cover;
+    height: min(80vw, 800px);
+    background-position: center;
+  }
+  .text-box {
+    padding: 4rem 2rem;
+  }
+</style>
+<BaseLayout noNavSpace>
+  <div class="hero nav-height-padding">
+    <!-- <div class="body-width text-box">
+      <h1>Belle Maison Interior Design</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.
+      </p>
+    </div> -->
+  </div>
 </BaseLayout>
