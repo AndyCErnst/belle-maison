@@ -1,0 +1,13 @@
+---
+const { img } = Astro.props
+---
+
+<style>
+  .hero {
+    background-size: cover;
+    height: min(80vw, 800px);
+    background-position: center;
+  }
+</style>
+<!-- annoyingly, using this method requires the consumed to prefix the image url with "src", unclear why -->
+<div class="hero nav-height-padding" style={`background-image: url(${img})`}></div>
