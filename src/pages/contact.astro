@@ -1,39 +1,65 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import MiniBanner from '../components/MiniBanner.astro'
 import { Image } from 'astro:assets'
 import image from '../images/IMG_9756small.webp'
+import gina from '../images/gina.jpg'
 ---
 
 <style>
-	.contact-container {
-		display: flex;
-	}
+  .contact-container {
+    display: flex;
+    gap: 4rem;
+  }
+
   .color-image {
     max-width: 40%;
     height: auto;
-		margin-left: auto;
+    margin: auto;
+  }
+  .gina-image {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    height: 200px;
+    width: auto;
+  }
+  .hello {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  @media all and (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+    .color-image { 
+      max-width: 80%;
+    }
   }
 </style>
-<BaseLayout pageBackground>
+<BaseLayout noNavSpace>
+  <MiniBanner title="Contact" />
   <div class="contact-container body-width">
     <!-- <p>
     Please leave your contact info and a message or question and I’ll contact you as soon
     as possible.
   </p> -->
     <div>
-			<h1>Contact</h1>
-      <p>
-        Please send a message or question and I’ll get back to you as soon as possible.
-      </p>
+      <div class="hello">
+        <Image src={gina} alt="Gina Schorr" class="gina-image" />
+        <p>
+          Please send a message or question and I’ll get back to you as soon as possible.
+        </p>
+      </div>
+      <p></p>
 
+      <h4>Gina Schorr</h4>
       <p>
+        <a href="tel:206-819-3331">206.819.3331</a><br />
         <a href="email:Gina@BelleMaisonInteriorDesign.com"
           >Gina@BelleMaisonInteriorDesign.com</a
         >
       </p>
-      <p><a href="tel:206-819-3331">206.819.3331</a></p>
     </div>
-		<Image src={image} alt="" class="color-image" />
-
+    <Image src={image} alt="" class="color-image" />
   </div>
 </BaseLayout>

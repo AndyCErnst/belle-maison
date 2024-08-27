@@ -1,7 +1,7 @@
 ---
 layout: '../layouts/MarkdownLayout.astro'
+title: 'Privacy Policy'
 ---
-# Privacy Policy
 Last Updated: 8/15/24
 
 Welcome to Belle Maison Interior Design. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website, bellemaisoninteriordesign.com.

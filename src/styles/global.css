@@ -224,6 +224,43 @@ li {
 ul, ol {
   margin-top: 1rem;
 }
+figure {
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+}
+
+figcaption {
+  background-color: #222;
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 3px;
+  text-align: center;
+}
+strong {
+  font-weight: 600;
+}
+hr {
+  height: 0;
+  border: none;
+  width: max(50%, 350px);
+  margin: 8rem auto;
+  padding: 0;
+  border-top: 7px double var(--primary2);
+  color: var(--primary2);
+  text-align: center;
+  overflow: visible;
+}
+hr:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -2.7rem;
+  font-size: 3rem;
+  padding: 0 0.15em;
+  background: white;
+  font-family: var(--heading-font);
+}
 /*#endregion base*/
 
 /*#region layout helper*/
