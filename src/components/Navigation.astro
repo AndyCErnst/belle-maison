@@ -4,7 +4,7 @@ import { Image } from 'astro:assets'
 const { noNavSpace } = Astro.props
 ---
 
-<div class="nav-wrapper" style={{position: noNavSpace ? 'absolute' : 'relative'}}>
+<div class="nav-wrapper" style={{ position: noNavSpace ? 'absolute' : 'relative' }}>
   <nav class="nav">
     <div class="nav-logo">
       <a href="/">
@@ -21,12 +21,18 @@ const { noNavSpace } = Astro.props
       <a href="/portfolio/">Portfolio</a>
       <a href="/testimonials/">Testimonials</a>
       <a href="/contact/">Contact</a>
+      <div class="nav-contact-info">
+        <a href="email:Gina@BelleMaisonInteriorDesign.com"
+          >Gina@BelleMaisonInteriorDesign.com</a
+        >
+        <a href="tel:206-819-3331">206.819.3331</a>
+      </div>
     </div>
   </nav>
 </div>
 
 <script>
-  function toggle () {
+  function toggle() {
     document.querySelector('body')?.classList.toggle('no-document-scroll')
     document.querySelector('.nav')?.classList.toggle('expanded')
   }
@@ -48,6 +54,7 @@ const { noNavSpace } = Astro.props
   }
   .nav-logo {
     max-width: 122px;
+    min-width: 122px;
     margin-left: var(--body-width-margin);
   }
   .nav-logo-image {
@@ -77,6 +84,10 @@ const { noNavSpace } = Astro.props
     background-color: #3a3a3a57;
   }
 
+  .nav-contact-info {
+    display: none;
+  }
+
   @media screen and (max-width: 635px) {
     /*#region mobile menu */
     .hamburger {
@@ -94,7 +105,8 @@ const { noNavSpace } = Astro.props
       padding: 1rem;
       border-radius: 0;
     }
-    .hamburger:hover, .hamburger:focus {
+    .hamburger:hover,
+    .hamburger:focus {
       background-color: transparent;
     }
 
@@ -125,7 +137,7 @@ const { noNavSpace } = Astro.props
       position: absolute;
       display: flex;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: center;
       width: 70%;
       z-index: 100;
       top: 0;
@@ -152,6 +164,15 @@ const { noNavSpace } = Astro.props
       flex-grow: 0;
       padding: 2rem;
       width: 100%;
+    }
+    .nav-contact-info {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem;
+      font-size: 2rem;
+      align-items: center;
     }
   }
   /*#endregion mobile menu */
@@ -184,7 +205,7 @@ const { noNavSpace } = Astro.props
       height: var(--nav-height-wide);
     }
     .nav-links {
-      margin-left: 16rem;
+      margin-left: 12rem;
     }
     .nav-logo {
       max-width: 172px;

@@ -16,7 +16,8 @@
   --gray900: #1f201e;
   --border-radius: 2.5px;
   /* --body-font: 'MinionPro', sans-serif; */
-  --body-font: "Oswald", sans-serif;
+  /* --body-font: "Oswald", sans-serif; */
+  --body-font: "Noto Sans", sans-serif;
   --heading-font:  "Apple Chancery", sans-serif;
   /* --heading-font:  "Playfair Display", serif; */
   --body-color: var(--primary2);
@@ -78,7 +79,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-family: var(--body-font);
   background-color: #ebe8e0;
   background-color: #dedfde;
@@ -283,6 +284,10 @@ ul, ol {
   .nav-height-padding {
     padding-top: var(--nav-height-wide);
   }
+}
+
+.reading-width {
+  max-width: 600px;
 }
 /*#endregion layout helper*/
 

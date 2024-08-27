@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
+
+import vertImage from '../images/IMG_5539.webp'
 ---
 
 <style>
@@ -13,22 +16,43 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     padding: 4rem 2rem;
     background-color: white;
   }
+  .block {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .first-block {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  .vert-image {
+    max-width: 40%;
+    height: auto;
+  }
 </style>
 <BaseLayout noNavSpace>
   <div class="hero nav-height-padding"></div>
   <div class="main-content">
-    <article class="body-width">
-      <p><strong>We believe that comfort is the ultimate luxury.</strong></p>
+    <article class="body-width block">
+      <div class="first-block">
+        <div>
+          <p><strong>We believe that comfort is the ultimate luxury</strong></p>
+          <p class="reading-width">
+            At Belle Maison Interior Design, we are dedicated to helping you achieve your
+            ultimate design goals. Our approach blends warm, inviting colors, textures,
+            and fabrics to create spaces that are not only luxurious but also deeply
+            comfortable. We’re here to explore and visualize the perfect solutions that
+            reflect your unique style and elevate your home.
+          </p>
+        </div>
+        <Image
+          src={vertImage}
+          class="vert-image"
+          alt="elegantly decorated bathroom with abstract painting on the wall, decorative cases, and wonderful light over a hardwood floor"
+        />
+      </div>
 
-      <p>
-        At Belle Maison Interior Design, we are dedicated to helping you achieve your
-        ultimate design goals. Our approach blends warm, inviting colors, textures, and
-        fabrics to create spaces that are not only luxurious but also deeply comfortable.
-        We’re here to explore and visualize the perfect solutions that reflect your unique
-        style and elevate your home.
-      </p>
-
-      <h3>Talk with Us About:</h3>
+      <h3 style="clear: both;">Talk with Us About:</h3>
       <ul>
         <li>
           <strong>Color Consultations:</strong> Creating palettes that resonate with your vision.
