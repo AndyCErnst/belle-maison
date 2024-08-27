@@ -10,5 +10,5 @@ const { img } = Astro.props
     border-bottom: 1rem solid var(--primary2)
   }
 </style>
-<!-- annoyingly, using this method requires the consumed to prefix the image url with "src", unclear why -->
+<!-- annoyingly, images need to be in the public folder for this method to work -->
 <div class="hero nav-height-padding" style={`background-image: url(${img})`}></div>
