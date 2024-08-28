@@ -2,7 +2,6 @@
 import '../styles/global.css'
 import Navigation from '../components/Navigation.astro'
 import Footer from '../components/Footer.astro'
-const { noNavSpace } = Astro.props
 ---
 
 <!doctype html>
@@ -69,7 +68,7 @@ const { noNavSpace } = Astro.props
   </head>
   <body>
     <div class="overlay"></div>
-    <Navigation noNavSpace={noNavSpace} />
+    <Navigation />
     <main>
       <div>
         <slot />

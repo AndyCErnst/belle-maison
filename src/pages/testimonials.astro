@@ -1,9 +1,143 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import MiniBanner from '../components/MiniBanner.astro'
+import { Image } from 'astro:assets'
+import angi from '../images/Angi.svg'
 ---
+
+<style>
+  .testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    row-gap: 7rem;
+    column-gap: 10rem;
+  }
+  @media all and (max-width: 1000px) {
+    .testimonial-container {
+      margin: 0 3rem;
+    }
+  }
+
+  blockquote {
+    font-size: var(--h5-size);
+    flex-grow: 1;
+    flex-basis: 45%;
+    margin: 0;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media all and (max-width: 1000px) {
+    blockquote {
+      max-width: 800px;
+    }
+  }
+
+  blockquote::before {
+    content: '“';
+    font-family: var(--heading-font);
+    position: absolute;
+    left: -46px;
+    top: -38px;
+    font-size: 9rem;
+    color: var(--accent1);
+  }
+
+  blockquote > footer {
+    font-family: var(--heading-font);
+    font-size: var(--h4-size);
+    color: var(--accent1);
+    position: relative;
+    margin-left: auto;
+  }
+  blockquote > footer:after {
+    content: '';
+    background-image: url('../images/star.svg');
+    width: 118px;
+    height: 23px;
+    display: block;
+    position: absolute;
+    top: -70%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  blockquote > footer::before {
+    content: '—';
+    left: -30px;
+    top: 0;
+    position: absolute;
+  }
+  .see-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    font-size: 2rem;
+    margin: 10rem auto 0 auto;
+    box-shadow: var(--shadow-light);
+    padding: 2rem;
+    border: 1px solid black;
+    max-width: 400px;
+  }
+  .see-reviews:hover, .see-reviews:focus {
+    box-shadow: var(--shadow-medium);
+  }
+</style>
+
 <BaseLayout>
-  <h1>Testimonials</h1>
+  <MiniBanner title="Testimonials" />
+  <div class="body-width">
+    <p class="reading-width" style="margin: auto;">
+      With a <strong>4.8 star rating</strong> on Angi and over a thousand satisfied customers, Belle Maison
+      Interior Design should be your first choice when reimagining your home or any other
+      space. But don't take it from us, listen to just a few of our many happy customers.
+    </p>
+
+    <hr style="margin-top: 10rem; margin-bottom: 12rem;"/>
+    <div class="testimonial-container">
+      <blockquote>
+        <p>
+          Gina has been amazing to work with. She went above and beyond. I was looking for
+          information on lighting and placement ideas. She took it even further by
+          providing additional ideas for areas throughout the space. <strong
+            >Highly recommend</strong
+          >.
+        </p>
+        <footer>Jason S.</footer>
+      </blockquote>
+      <blockquote>
+        <p>
+          I am <strong>so thrilled</strong> with the results of Belle Maison's Interior Decorating
+          support. I can't stop going to each room to admire the results!
+        </p>
+        <footer>Jeanne L.</footer>
+      </blockquote>
+      <blockquote>
+        <p>
+          From the very beginning, Gina was professional, responsive, and had a great
+          sense of style. She listened to <strong>my vision</strong> for the space and offered
+          creative solutions to <strong>make it a reality</strong>. She also went above
+          and beyond her duties to help me find and coordinate with good contractors, help
+          me stay within my budget and stick to my timelines. The transformation of my
+          home is truly impressive and I get compliments from everyone who sees it. [...] <strong
+            >I highly recommend her</strong
+          >.
+        </p>
+        <footer>Aadish K.</footer>
+      </blockquote>
+    </div>
     <p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
+      <a
+        class="see-reviews"
+        href="https://www.angi.com/companylist/us/wa/seattle/belle-maison-interior-design-reviews-481761.htm#reviews-section"
+        >See all reviews at Angi.com
+        <Image src={angi} alt="Angi.com" />
+      </a>
+    </p>
+  </div>
 </BaseLayout>

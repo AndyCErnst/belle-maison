@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 const { title } = Astro.props.frontmatter
 ---
 
-<BaseLayout noNavSpace>
+<BaseLayout>
   <MiniBanner title={title} />
   <div class="body-width">
     <slot />

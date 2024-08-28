@@ -1,10 +1,9 @@
 ---
 import logo from '../images/logo.jpg'
 import { Image } from 'astro:assets'
-const { noNavSpace } = Astro.props
 ---
 
-<div class="nav-wrapper" style={{ position: noNavSpace ? 'absolute' : 'relative' }}>
+<div class="nav-wrapper">
   <nav class="nav">
     <div class="nav-logo">
       <a href="/">
@@ -46,6 +45,7 @@ const { noNavSpace } = Astro.props
     width: 100%;
     z-index: 1;
     height: var(--nav-height-thin);
+    position: absolute
   }
   .nav {
     margin-top: 5px;
