@@ -1,7 +1,9 @@
 ---
 import logo from '../images/logo.jpg'
+import ContactInfo from '../components/ContactInfo.astro'
 import { Image } from 'astro:assets'
 ---
+
 <style>
   .footer {
     border-top: 1rem solid var(--primary2);
@@ -14,15 +16,15 @@ import { Image } from 'astro:assets'
     padding-bottom: 1rem;
   }
   @media all and (max-width: 600px) {
-    .footer-blocks { 
+    .footer-blocks {
       flex-direction: column;
       gap: 2rem;
     }
   }
-  .footer-block { 
-    padding-top: 2rem;
+  .footer-block {
+    padding-top: 3rem;
     padding-bottom: 1rem;
-    padding-left: 2rem;
+    padding-left: 3rem;
     flex-grow: 1;
     flex-basis: 50%;
     display: flex;
@@ -30,6 +32,7 @@ import { Image } from 'astro:assets'
     justify-content: center;
     border-left: 2px solid var(--primary2);
   }
+
   .footer-block-image {
     flex-grow: 0;
     flex-basis: auto;
@@ -37,15 +40,15 @@ import { Image } from 'astro:assets'
     border: none;
     padding-left: 0;
   }
-   .footer-logo-image {
+  .footer-logo-image {
     max-width: 180px;
     height: auto;
     padding: 1rem;
     border: 2px solid var(--accent2);
-   }
-   .footer-signature {
-    font-family: ;
-   }
+  }
+  .footer-signature {
+    font-family:;
+  }
   .copywrite {
     text-align: center;
     padding-bottom: 1rem;
@@ -66,13 +69,7 @@ import { Image } from 'astro:assets'
       <li><a href="/privacy-policy">Privacy Policy</a></li>
     </ul>
     <div class="footer-block">
-      <div class="h4">Gina Schorr</div>
-      <div><a href="tel:206-819-3331">206.819.3331</a></div>
-      <div>
-        <a href="email:Gina@BelleMaisonInteriorDesign.com"
-          >Gina@BelleMaisonInteriorDesign.com</a
-        >
-      </div>
+<ContactInfo />
     </div>
   </div>
   <div class="body-width copywrite">

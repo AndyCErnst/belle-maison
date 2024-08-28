@@ -4,6 +4,7 @@ import MiniBanner from '../components/MiniBanner.astro'
 import { Image } from 'astro:assets'
 import image from '../images/IMG_9756small.webp'
 import gina from '../images/gina.jpg'
+import ContactInfo from '../components/ContactInfo.astro'
 ---
 
 <style>
@@ -31,7 +32,7 @@ import gina from '../images/gina.jpg'
     .contact-container {
       flex-direction: column;
     }
-    .color-image { 
+    .color-image {
       max-width: 80%;
     }
   }
@@ -50,15 +51,7 @@ import gina from '../images/gina.jpg'
           Please send a message or question and I’ll get back to you as soon as possible.
         </p>
       </div>
-      <p></p>
-
-      <h4>Gina Schorr</h4>
-      <p>
-        <a href="tel:206-819-3331">206.819.3331</a><br />
-        <a href="email:Gina@BelleMaisonInteriorDesign.com"
-          >Gina@BelleMaisonInteriorDesign.com</a
-        >
-      </p>
+      <ContactInfo />
     </div>
     <Image src={image} alt="" class="color-image" />
   </article>

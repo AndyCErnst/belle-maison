@@ -1,6 +1,10 @@
 ---
 import logo from '../images/logo.jpg'
+import email from '../images/email.svg'
+import phone from '../images/phone.svg'
 import { Image } from 'astro:assets'
+import ContactInfo from '../components/ContactInfo.astro'
+
 ---
 
 <div class="nav-wrapper">
@@ -21,15 +25,16 @@ import { Image } from 'astro:assets'
       <a href="/testimonials/">Testimonials</a>
       <a href="/contact/">Contact</a>
       <div class="nav-contact-info">
-        <a href="email:Gina@BelleMaisonInteriorDesign.com"
-          >Gina@BelleMaisonInteriorDesign.com</a
+        <ContactInfo name={false} />
+        <!-- <a href="email:Gina@BelleMaisonInteriorDesign.com"
+          ><Image src={email} alt="email" />Gina@BelleMaison<wbr>InteriorDesign.com</a
         >
-        <a href="tel:206-819-3331">206.819.3331</a>
+
+        <a href="tel:206-819-3331"><Image src={phone} alt="phone" />206.819.3331</a> -->
       </div>
     </div>
   </nav>
 </div>
-
 
 <script>
   function toggle() {
@@ -45,7 +50,7 @@ import { Image } from 'astro:assets'
     width: 100%;
     z-index: 1;
     height: var(--nav-height-thin);
-    position: absolute
+    position: absolute;
   }
   .nav {
     margin-top: 8px;
@@ -172,8 +177,7 @@ import { Image } from 'astro:assets'
       flex-direction: column;
       justify-content: flex-end;
       padding: 3rem;
-      font-size: 2rem;
-      align-items: center;
+      font-size: 1.8rem;
     }
   }
   /*#endregion mobile menu */
@@ -199,6 +203,9 @@ import { Image } from 'astro:assets'
     }
     .hamburger {
       display: none;
+    }
+    .nav-contact-info {
+      font-size: 2rem;
     }
   }
   @media screen and (min-width: 730px) {

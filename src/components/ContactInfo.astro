@@ -1,0 +1,24 @@
+---
+import email from '../images/email.svg'
+import phone from '../images/phone.svg'
+import { Image } from 'astro:assets'
+const { name = true } = Astro.props
+---
+<style>
+    .contact-info {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .contact-info > img {
+    margin-top: -2px;
+  }
+</style>
+
+{name ? <h4 style="margin-top: 0;">Gina Schorr</h4> : null}
+<a class="contact-info" href="tel:206-819-3331"><Image src={phone} alt="phone" />206.819.3331</a>
+
+<a class="contact-info"  href="email:Gina@BelleMaisonInteriorDesign.com"
+  ><Image src={email} alt="email" />Gina@BelleMaison<wbr />InteriorDesign.com</a
+>
