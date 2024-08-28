@@ -42,8 +42,21 @@ import bedroom from '../images/IMG_5535.webp'
     flex-shrink: 0;
   }
   @media all and (max-width: 768px) {
-    .our-work {
+   .first-block {
       flex-direction: column;
+      gap: 0rem;
+    }
+    .our-work {
+      flex-direction: column-reverse;
+      gap: 0rem;
+    }
+    .vert-image {
+      max-width: 100%;
+      object-fit: cover;
+      max-height: 300px;
+    }
+    .our-work-img {
+      width: 100%;
     }
   }
 </style>
