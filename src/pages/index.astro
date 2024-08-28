@@ -3,10 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Banner from '../components/Banner.astro'
 import { Image } from 'astro:assets'
 import vertImage from '../images/IMG_5539.webp'
-import livingRoom from "../images/Raman pics 8 04-05-17.webp"
-import kitchen from "../images/Zenobia kitchen 2 03.12.21.webp"
+import livingRoom from '../images/Raman pics 8 04-05-17.webp'
+import kitchen from '../images/Zenobia kitchen 2 03.12.21.webp'
 import bathroom from "../images/Maple Valley Bathroom 3  '22.webp"
-import bedroom from "../images/IMG_5535.webp"
+import bedroom from '../images/IMG_5535.webp'
 ---
 
 <style>
@@ -15,7 +15,6 @@ import bedroom from "../images/IMG_5535.webp"
   }
   .block {
     margin-top: 3rem;
-    margin-bottom: 3rem;
   }
   .first-block {
     display: flex;
@@ -43,7 +42,7 @@ import bedroom from "../images/IMG_5535.webp"
     flex-shrink: 0;
   }
   @media all and (max-width: 768px) {
-    .our-work { 
+    .our-work {
       flex-direction: column;
     }
   }
@@ -115,50 +114,86 @@ import bedroom from "../images/IMG_5535.webp"
           complete your design.
         </li>
       </ul>
-
+      <h3>Unique Specialities</h3>
+      <ul style="max-width: 800px">
+        <li>
+          <strong>Holiday and Event Decorating:</strong> Elevate your home or event space for any occasion
+          with beautifully curated holiday and event décor.
+        </li>
+        <li>
+          <strong>Custom Artwork:</strong> Enhance your space with unique, custom-painted artwork
+          that complements your design.
+        </li>
+      </ul>
       <hr />
 
       <h2>Some of Our Work</h2>
       <ul class="unstyled-list our-work-list">
         <li class="our-work">
-          <Image src={livingRoom} alt="" class="our-work-img"/>
+          <Image src={livingRoom} alt="" class="our-work-img" />
           <div>
             <h3>Living Rooms</h3>
-            <p>Your living room should be a sanctuary of comfort and style, where every detail invites relaxation. At Belle Maison, we transform your living space into a luxurious retreat, blending rich textures, warm colors, and carefully curated furnishings. Whether it’s a cozy nook for family gatherings or a sophisticated space for entertaining, we’ll design a living room that reflects your unique lifestyle.
-
+            <p>
+              Your living room should be a sanctuary of comfort and style, where every
+              detail invites relaxation. At Belle Maison, we transform your living space
+              into a luxurious retreat, blending rich textures, warm colors, and carefully
+              curated furnishings. Whether it’s a cozy nook for family gatherings or a
+              sophisticated space for entertaining, we’ll design a living room that
+              reflects your unique lifestyle.
             </p>
           </div>
         </li>
         <li class="our-work">
-          <Image src={kitchen} alt="" class="our-work-img"/>
+          <Image src={kitchen} alt="" class="our-work-img" />
           <div>
             <h3>Kitchens</h3>
-            <p>The kitchen is the heart of your home, and Belle Maison brings together function and beauty to create a space where memories are made. From custom cabinetry to elegant countertops and lighting, we’ll design a kitchen that’s as inviting as it is practical. Whether you’re hosting dinner parties or enjoying a quiet morning coffee, your kitchen will be a place of warmth and connection.</p>
-          </div>
-        </li>
-        <li class="our-work">
-          <Image src={bathroom} alt="" class="our-work-img"/>
-          <div>
-            <h3>Bathrooms</h3>
-            <p>Experience the ultimate in relaxation with a bathroom designed by Belle Maison. We’ll create a spa-like oasis that combines luxurious finishes, soothing colors, and elegant fixtures. From modern minimalism to timeless elegance, your bathroom will become a serene escape where you can unwind and recharge in style.
-
+            <p>
+              The kitchen is the heart of your home, and Belle Maison brings together
+              function and beauty to create a space where memories are made. From custom
+              cabinetry to elegant countertops and lighting, we’ll design a kitchen that’s
+              as inviting as it is practical. Whether you’re hosting dinner parties or
+              enjoying a quiet morning coffee, your kitchen will be a place of warmth and
+              connection.
             </p>
           </div>
         </li>
         <li class="our-work">
-          <Image src={bedroom} alt="" class="our-work-img"/>
+          <Image src={bathroom} alt="" class="our-work-img" />
+          <div>
+            <h3>Bathrooms</h3>
+            <p>
+              Experience the ultimate in relaxation with a bathroom designed by Belle
+              Maison. We’ll create a spa-like oasis that combines luxurious finishes,
+              soothing colors, and elegant fixtures. From modern minimalism to timeless
+              elegance, your bathroom will become a serene escape where you can unwind and
+              recharge in style.
+            </p>
+          </div>
+        </li>
+        <li class="our-work">
+          <Image src={bedroom} alt="" class="our-work-img" />
           <div>
             <h3>Bedrooms</h3>
-            <p>Your bedroom is your personal haven, a place of rest and rejuvenation. Belle Maison designs bedrooms that envelop you in comfort and tranquility, using soft fabrics, calming color palettes, and thoughtfully arranged furnishings. We’ll craft a space where you can retreat from the world, surrounded by beauty and serenity, for the perfect night’s sleep.
-
+            <p>
+              Your bedroom is your personal haven, a place of rest and rejuvenation. Belle
+              Maison designs bedrooms that envelop you in comfort and tranquility, using
+              soft fabrics, calming color palettes, and thoughtfully arranged furnishings.
+              We’ll craft a space where you can retreat from the world, surrounded by
+              beauty and serenity, for the perfect night’s sleep.
             </p>
           </div>
         </li>
         <li>
-          <hr/>
+          <hr />
           <div class="h3" style="text-align: center; margin-top: 8rem;">And More!</div>
         </li>
       </ul>
+      <p class="reading-width" style="text-align: center; margin: auto">
+        See our <a href="/portfolio/">Portfolio</a> for examples of what we've done, the <a
+          href="/testimonials/">Testimonials</a
+        > for our rave reviews, or <a href="/contact/">Contact us</a> to reinvent your home
+        today!
+      </p>
     </article>
   </div>
 </BaseLayout>
