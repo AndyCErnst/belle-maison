@@ -91,7 +91,6 @@ body {
   font-weight: 300;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden; /* not ideal but needed for the mobile menu */
 }
 
 main {
