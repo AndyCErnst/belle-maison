@@ -172,13 +172,13 @@ h5,
 @media all and (max-width: 800px) {
   h1,
   .h1 {
-    font-size: calc(0.8 * var(--h1-size));
+    font-size: calc(0.9 * var(--h1-size));
   }
   h2,
   .h2 {
-    font-size: calc(0.8 * var(--h2-size));
+    font-size: calc(0.9 * var(--h2-size));
   }
-
+  /* 
   h3,
   .h3 {
     font-size: calc(0.8 * var(--h3-size));
@@ -186,7 +186,7 @@ h5,
   h4,
   .h4 {
     font-size: calc(0.8 * var(--h4-size));
-  }
+  } */
 }
 
 p {
@@ -267,7 +267,8 @@ strong {
 hr {
   height: 0;
   border: none;
-  width: max(50%, 350px);
+  width: max(80%, 350px);
+  max-width: 100%;
   margin: 8rem auto;
   padding: 0;
   border-top: 7px double var(--primary2);
@@ -276,10 +277,6 @@ hr {
   overflow: visible;
 }
 hr:after {
-  /* content: '§'; */
-  /* font-size: 3rem;
-  font-family: var(--heading-font);
-  color: var(--primary2); */
   width: 5rem;
   content: url('../images/logo.svg');
   display: inline-block;
@@ -293,7 +290,7 @@ hr:after {
 /*#region layout helper*/
 .body-width {
   max-width: var(--body-width);
-  margin: auto;
+  margin: 0 auto;
   padding: 0 16px;
 }
 
