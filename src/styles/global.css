@@ -266,7 +266,7 @@ hr {
   max-width: 100%;
   margin: 8rem auto;
   padding: 0;
-  border-top: 6px solid var(--primary2);
+  border-top: 4px solid var(--primary2);
   color: var(--primary2);
   text-align: center;
   overflow: visible;
@@ -276,8 +276,8 @@ hr:after {
   content: url('../images/logo.svg');
   display: inline-block;
   position: relative;
-  top: -3rem;
-  padding: 0 0.15em;
+  top: -3.3rem;
+  padding: 0 0.1em;
   background: var(--bgColor);
 }
 /*#endregion base*/
