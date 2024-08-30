@@ -10,6 +10,7 @@ import ContactInfo from '../components/ContactInfo.astro'
 <style>
   .contact-container {
     display: flex;
+    justify-content: space-between;
     gap: 4rem;
   }
 
@@ -41,20 +42,19 @@ import ContactInfo from '../components/ContactInfo.astro'
 </style>
 <BaseLayout>
   <MiniBanner title="Contact" />
-  <article class="contact-container body-width">
-    <!-- <p>
-    Please leave your contact info and a message or question and I’ll contact you as soon
-    as possible.
-  </p> -->
-    <div>
-      <div class="hello">
-        <Image src={gina} alt="Gina Schorr" class="gina-image" />
-        <p>
-          Please send a message or question and I’ll get back to you as soon as possible.
-        </p>
+  <div class="body-width">
+    <article class="contact-container content-block">
+      <div class="content-block-inner">
+        <div class="hello">
+          <Image src={gina} alt="Gina Schorr" class="gina-image" />
+          <p>
+            Please send a message or question and I’ll get back to you as soon as
+            possible.
+          </p>
+        </div>
+        <ContactInfo />
       </div>
-      <ContactInfo />
-    </div>
-    <Image src={image} alt="" class="color-image" />
-  </article>
+      <Image src={image} alt="" class="color-image" />
+    </article>
+  </div>
 </BaseLayout>

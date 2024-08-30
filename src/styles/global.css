@@ -3,7 +3,7 @@
   --body-width-margin: max(16px, calc((100vw - 1080px) / 2 + 8px));
   --h1-size: 7.2rem;
   --h2-size: 4.8rem;
-  --h3-size: 3.2rem;
+  --h3-size: 3.6rem;
   --h4-size: 2.4rem;
   --h5-size: 1.8rem;
   --small-text: 1.5rem;
@@ -16,11 +16,8 @@
   --gray900: #1f201e;
   --bgColor: #ebebeb;
   --border-radius: 2.5px;
-  /* --body-font: 'MinionPro', sans-serif; */
-  /* --body-font: "Oswald", sans-serif; */
   --body-font: 'Noto Sans', sans-serif;
-  --heading-font: 'Apple Chancery', sans-serif;
-  /* --heading-font:  "Playfair Display", serif; */
+  --heading-font:  "Gloock", serif;
   --body-color: var(--primary2);
   --shadow-light: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
   --shadow-medium: 6px 6px 6px 0 rgba(0, 0, 0, 0.5);
@@ -33,6 +30,12 @@
   font-style: normal;
   font-weight: normal;
   src: local('/fonts/Apple Chancery'), url('/fonts/Apple Chancery.woff') format('woff');
+}
+@font-face {
+  font-family: 'Gloock';
+  font-style: normal;
+  font-weight: normal;
+  src: local('/fonts/Gloock'), url('/fonts/Gloock.ttf') format('ttf');
 }
 
 /*#region base*/
@@ -124,6 +127,7 @@ h5,
   font-weight: 400;
   font-style: normal;
   line-height: 1.3;
+  margin-top: 0;
 }
 
 h1,
@@ -178,15 +182,6 @@ h5,
   .h2 {
     font-size: calc(0.9 * var(--h2-size));
   }
-  /* 
-  h3,
-  .h3 {
-    font-size: calc(0.8 * var(--h3-size));
-  }
-  h4,
-  .h4 {
-    font-size: calc(0.8 * var(--h4-size));
-  } */
 }
 
 p {
@@ -271,7 +266,7 @@ hr {
   max-width: 100%;
   margin: 8rem auto;
   padding: 0;
-  border-top: 7px double var(--primary2);
+  border-top: 6px solid var(--primary2);
   color: var(--primary2);
   text-align: center;
   overflow: visible;
@@ -349,5 +344,14 @@ hr:after {
 
 .reading-width {
   max-width: 600px;
+}
+
+.content-block{
+  background: white;
+  border: 4px solid var(--accent2);
+  box-shadow: var(--shadow-light);
+}
+.content-block-inner {
+  padding: 3rem;
 }
 /*#endregion layout helper*/

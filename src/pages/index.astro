@@ -16,10 +16,10 @@ import diningRoom from '../images/Christina dining room 2.webp'
   }
   .first-block {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
   }
   .vert-image {
-    max-width: 35%;
+    max-width: 38%;
     height: auto;
   }
   .our-work-list {
@@ -27,15 +27,11 @@ import diningRoom from '../images/Christina dining room 2.webp'
   }
   .our-work {
     display: flex;
-    gap: 4rem;
     margin-bottom: 4rem;
-  }
-  .our-work h3 {
-    margin-top: 0;
   }
   .our-work-img {
     width: 45%;
-    max-height: 300px;
+    max-height: 360px;
     object-fit: cover;
     flex-shrink: 0;
   }
@@ -61,11 +57,11 @@ import diningRoom from '../images/Christina dining room 2.webp'
 <BaseLayout>
   <Banner img={'/banner/IMG_9761.webp'} />
   <article class="body-width block">
-    <div class="first-block">
-      <div>
+    <div class="first-block content-block">
+      <div class="content-block-inner">
         <h2 style="margin-top: 0">Welcome to Belle Maison</h2>
         <p><strong>We believe that comfort is the ultimate luxury</strong></p>
-        <p class="reading-width">
+        <p>
           At Belle Maison Interior Design, we are dedicated to helping you achieve your
           ultimate design goals. Our approach blends warm, inviting colors, textures, and
           fabrics to create spaces that are not only luxurious but also deeply
@@ -82,7 +78,8 @@ import diningRoom from '../images/Christina dining room 2.webp'
 
     <hr />
 
-    <h2>Talk with Us About:</h2>
+    <h2 style="text-align: center; margin-bottom: 4rem;">Talk with Us About</h2>
+    <div class="content-block content-block-inner" style="max-width: 800px; margin: auto;">
     <ul>
       <li>
         <strong>Color Consultations:</strong> Creating palettes that resonate with your vision.
@@ -125,7 +122,7 @@ import diningRoom from '../images/Christina dining room 2.webp'
       </li>
     </ul>
     <h3>Unique Specialities</h3>
-    <ul style="max-width: 800px">
+    <ul >
       <li>
         <strong>Holiday and Event Decorating:</strong> Elevate your home or event space for
         any occasion with beautifully curated holiday and event décor.
@@ -135,12 +132,14 @@ import diningRoom from '../images/Christina dining room 2.webp'
         that complements your design.
       </li>
     </ul>
+  </div>
     <hr />
 
-    <h2>Some of Our Work</h2>
+    <h2 style="text-align: center;">Some of Our Work</h2>
     <ul class="unstyled-list our-work-list">
-      <li class="our-work">
+      <li class="our-work content-block">
         <Image src={livingRoom} alt="" class="our-work-img" />
+        <div class="content-block-inner">
         <div>
           <h3>Living Rooms</h3>
           <p>
@@ -151,10 +150,11 @@ import diningRoom from '../images/Christina dining room 2.webp'
             sophisticated space for entertaining, we’ll design a living room that reflects
             your unique lifestyle.
           </p>
-        </div>
+        </div></div>
       </li>
-      <li class="our-work">
+      <li class="our-work content-block">
         <Image src={kitchen} alt="" class="our-work-img" />
+        <div class="content-block-inner">
         <div>
           <h3>Kitchens</h3>
           <p>
@@ -165,10 +165,11 @@ import diningRoom from '../images/Christina dining room 2.webp'
             enjoying a quiet morning coffee, your kitchen will be a place of warmth and
             connection.
           </p>
-        </div>
+        </div></div>
       </li>
-      <li class="our-work">
+      <li class="our-work content-block">
         <Image src={bathroom} alt="" class="our-work-img" />
+        <div class="content-block-inner">
         <div>
           <h3>Bathrooms</h3>
           <p>
@@ -178,10 +179,11 @@ import diningRoom from '../images/Christina dining room 2.webp'
             elegance, your bathroom will become a serene escape where you can unwind and
             recharge in style.
           </p>
-        </div>
+        </div></div>
       </li>
-      <li class="our-work">
+      <li class="our-work content-block">
         <Image src={bedroom} alt="" class="our-work-img" />
+        <div class="content-block-inner">
         <div>
           <h3>Bedrooms</h3>
           <p>
@@ -191,10 +193,11 @@ import diningRoom from '../images/Christina dining room 2.webp'
             We’ll craft a space where you can retreat from the world, surrounded by beauty
             and serenity, for the perfect night’s sleep.
           </p>
-        </div>
+        </div></div>
       </li>
-      <li class="our-work">
+      <li class="our-work content-block">
         <Image src={diningRoom} alt="" class="our-work-img" />
+        <div class="content-block-inner">
         <div>
           <h3>Dining Rooms</h3>
           <p>
@@ -204,7 +207,7 @@ import diningRoom from '../images/Christina dining room 2.webp'
             gathering, from intimate dinners to festive celebrations. Let us craft a
             dining room that’s as inviting as it is refined.
           </p>
-        </div>
+        </div></div>
       </li>
       <li>
         <hr />

@@ -9,7 +9,7 @@ import colorImage from '../images/IMG_5535.webp'
 <style>
   .container {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
   }
   .gina-image {
     margin-right: 2.5rem;
@@ -33,12 +33,11 @@ import colorImage from '../images/IMG_5535.webp'
       width: 100%;
     }
   }
-
 </style>
 <BaseLayout>
   <MiniBanner title="About Belle Maison" />
   <article class="body-width">
-    <div class="container">
+    <div class="container content-block content-block-inner">
       <figure class="gina-image">
         <Image src={gina} alt="Gina Schorr" />
         <figcaption>Gina Schorr, owner</figcaption>
@@ -67,33 +66,36 @@ import colorImage from '../images/IMG_5535.webp'
     </div>
 
     <hr />
-    <h2>Our Process</h2>
-    <div class="container">
-      <div>
-        <p>
-          At Belle Maison, we know that no two clients are alike. Your needs and tastes
-          are unique, so <strong>we don’t believe in a one-size-fits-all solution</strong
-          >. Our process begins with a face-to-face meeting where we get to know you and
-          your vision. We’ll ask questions, brainstorm ideas, explore all possibilities,
-          and discuss a budget that works for you.
-        </p>
-        <p>
-          Together, we’ll define your starting point and develop a customized plan to
-          transform your home into the <strong>functional</strong> and <strong
-            >beautiful</strong
-          > space you’ve envisioned. We'll define a schedule to structure the next stage of
-          the process, which involves space planning, acquisition of materials, furniture,
-          accessories, etc., and scheduling contractors.
-        </p><p>
-          From initial concepts to the final touches, we’ll guide you through every step,
-          ensuring that your design goals become a reality.
-        </p>
+    <div class="content-block">
+      <div class="container">
+        <div class="content-block-inner">
+          <h2>Our Process</h2>
+          <p>
+            At Belle Maison, we know that no two clients are alike. Your needs and tastes
+            are unique, so <strong
+              >we don’t believe in a one-size-fits-all solution</strong
+            >. Our process begins with a face-to-face meeting where we get to know you and
+            your vision. We’ll ask questions, brainstorm ideas, explore all possibilities,
+            and discuss a budget that works for you.
+          </p>
+          <p>
+            Together, we’ll define your starting point and develop a customized plan to
+            transform your home into the <strong>functional</strong> and <strong
+              >beautiful</strong
+            > space you’ve envisioned. We'll define a schedule to structure the next stage
+            of the process, which involves space planning, acquisition of materials, furniture,
+            accessories, etc., and scheduling contractors.
+          </p><p>
+            From initial concepts to the final touches, we’ll guide you through every
+            step, ensuring that your design goals become a reality.
+          </p>
+        </div>
+        <Image
+          src={colorImage}
+          alt="beautiful modern bedroom. Blue chaise lounge with decorative pillows in the foreground, modern four-poster bed in the background."
+          class="color-image"
+        />
       </div>
-      <Image
-        src={colorImage}
-        alt="beautiful modern bedroom. Blue chaise lounge with decorative pillows in the foreground, modern four-poster bed in the background."
-        class="color-image"
-      />
     </div>
   </article>
 </BaseLayout>
