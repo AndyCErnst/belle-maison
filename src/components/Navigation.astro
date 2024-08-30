@@ -27,11 +27,6 @@ import ContactInfo from '../components/ContactInfo.astro'
         <a href="/contact/">Contact</a>
         <div class="nav-contact-info">
           <ContactInfo name={false} />
-          <!-- <a href="email:Gina@BelleMaisonInteriorDesign.com"
-          ><Image src={email} alt="email" />Gina@BelleMaison<wbr>InteriorDesign.com</a
-        >
-
-        <a href="tel:206-819-3331"><Image src={phone} alt="phone" />206.819.3331</a> -->
         </div>
       </div>
     </div>
@@ -185,6 +180,7 @@ import ContactInfo from '../components/ContactInfo.astro'
     }
     .nav-contact-info {
       display: flex;
+      width: 100%;
       flex-grow: 1;
       flex-direction: column;
       justify-content: flex-end;
@@ -219,9 +215,6 @@ import ContactInfo from '../components/ContactInfo.astro'
     }
     .hamburger {
       display: none;
-    }
-    .nav-contact-info {
-      font-size: 2rem;
     }
     .nav-logo-image {
       width: 172px;
