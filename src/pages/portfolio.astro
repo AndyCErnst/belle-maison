@@ -27,33 +27,32 @@ import Img21 from '../images/raman pics 5 04-05-17.webp'
 import Img22 from '../images/Raman pics 6 04-05-17.webp'
 import Img23 from '../images/Raman pics 8 04-05-17.webp'
 import Img24 from '../images/Zenobia kitchen 2 03.12.21.webp'
-
 const images = [
-  { src: Img1, id: 1, alt: '', horz: true },
-  { src: Img5, id: 5, alt: '', horz: true },
-  { src: Img6, id: 6, alt: '', horz: false },
-  { src: Img7, id: 7, alt: '', horz: false },
-  { src: Img8, id: 8, alt: '', horz: true },
-  { src: Img9, id: 9, alt: '', horz: false },
-  { src: Img10, id: 10, alt: '', horz: true },
-  { src: Img20, id: 20, alt: '', horz: false },
-  { src: Img11, id: 11, alt: '', horz: true }, 
-  { src: Img12, id: 12, alt: '', horz: true },
-  { src: Img13, id: 13, alt: '', horz: true },
-  { src: Img14, id: 14, alt: '', horz: true },
-  { src: Img15, id: 15, alt: '', horz: true },
-  { src: Img15a, id: 15.5, alt: '', horz: true },
-  { src: Img16, id: 16, alt: '', horz: true },
-  { src: Img17, id: 17, alt: '', horz: true },
-  { src: Img18, id: 18, alt: '', horz: true },
-  { src: Img19, id: 19, alt: '', horz: true },
-  { src: Img21, id: 21, alt: '', horz: true },
-  { src: Img22, id: 22, alt: '', horz: false },
-  { src: Img23, id: 23, alt: '', horz: true },
-  { src: Img24, id: 24, alt: '', horz: true },
-  { src: Img2, id: 2, alt: '', horz: true },
-  { src: Img3, id: 3, alt: '', horz: false },
-  { src: Img4, id: 4, alt: '', horz: false },
+  { img: Img1, id: 1, alt: '', horz: true },
+  { img: Img5, id: 5, alt: '', horz: true },
+  { img: Img6, id: 6, alt: '', horz: false },
+  { img: Img7, id: 7, alt: '', horz: false },
+  { img: Img8, id: 8, alt: '', horz: true },
+  { img: Img9, id: 9, alt: '', horz: false },
+  { img: Img10, id: 10, alt: '', horz: true },
+  { img: Img20, id: 20, alt: '', horz: false },
+  { img: Img11, id: 11, alt: '', horz: true },
+  { img: Img12, id: 12, alt: '', horz: true },
+  { img: Img13, id: 13, alt: '', horz: true },
+  { img: Img14, id: 14, alt: '', horz: true },
+  { img: Img15, id: 15, alt: '', horz: true },
+  { img: Img15a, id: 15.5, alt: '', horz: true },
+  { img: Img16, id: 16, alt: '', horz: true },
+  { img: Img17, id: 17, alt: '', horz: true },
+  { img: Img18, id: 18, alt: '', horz: true },
+  { img: Img19, id: 19, alt: '', horz: true },
+  { img: Img21, id: 21, alt: '', horz: true },
+  { img: Img22, id: 22, alt: '', horz: false },
+  { img: Img23, id: 23, alt: '', horz: true },
+  { img: Img24, id: 24, alt: '', horz: true },
+  { img: Img2, id: 2, alt: '', horz: true },
+  { img: Img3, id: 3, alt: '', horz: false },
+  { img: Img4, id: 4, alt: '', horz: false },
 ]
 ---
 
@@ -96,7 +95,7 @@ const images = [
     height: 300px;
     width: 300px;
   } */
-  .image-container:hover .indicator { 
+  .image-container:hover .indicator {
     display: block;
   }
 
@@ -118,15 +117,20 @@ const images = [
           return (
             <div class="image-container">
               <div class="indicator">{img.id}</div>
-              <Image
-                src={img.src}
-                alt={img.alt}
-                class={'image ' + (img.horz ? 'horz' : 'vert')}
-              />
+              <a data-fslightbox href={img.img.src}>
+                <Image
+                  src={img.img}
+                  alt={img.alt}
+                  class={'image ' + (img.horz ? 'horz' : 'vert')}
+                />
+              </a>
             </div>
           )
         })
       }
     </div>
   </article>
+  <script>
+    import 'fslightbox'
+  </script>
 </BaseLayout>
