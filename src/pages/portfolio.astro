@@ -17,9 +17,9 @@ import Img12 from '../images/lodge2.webp'
 import Img13 from '../images/lodge3.jpg'
 import Img14 from '../images/Maple Valley Bathroom 2.webp'
 import Img15 from '../images/Maple Valley Bathroom 3.webp'
-import Img15a from '../images/Bathroom black and white 1.webp'
+import Img25 from '../images/Bathroom black and white 1.webp'
 import Img16 from '../images/McClure pics 8.webp'
-import Img17 from '../images/Moore bathroom 2 cropped.webp'
+import Img17 from '../images/Moore bathroom 2.webp'
 import Img18 from '../images/Raman pics 2 04-05-17.webp'
 import Img19 from '../images/Raman pics 3 04-05-17.webp'
 import Img20 from '../images/Raman pics 4 04-05-17.webp'
@@ -28,38 +28,39 @@ import Img22 from '../images/Raman pics 6 04-05-17.webp'
 import Img23 from '../images/Raman pics 8 04-05-17.webp'
 import Img24 from '../images/Zenobia kitchen 2 03.12.21.webp'
 const images = [
-  { img: Img1, id: 1, alt: '', horz: true },
-  { img: Img5, id: 5, alt: '', horz: true },
-  { img: Img6, id: 6, alt: '', horz: false },
-  { img: Img7, id: 7, alt: '', horz: false },
-  { img: Img8, id: 8, alt: '', horz: true },
-  { img: Img9, id: 9, alt: '', horz: false },
-  { img: Img10, id: 10, alt: '', horz: true },
-  { img: Img20, id: 20, alt: '', horz: false },
-  { img: Img11, id: 11, alt: '', horz: true },
-  { img: Img12, id: 12, alt: '', horz: true },
-  { img: Img13, id: 13, alt: '', horz: true },
-  { img: Img14, id: 14, alt: '', horz: true },
-  { img: Img15, id: 15, alt: '', horz: true },
-  { img: Img15a, id: 15.5, alt: '', horz: true },
-  { img: Img16, id: 16, alt: '', horz: true },
-  { img: Img17, id: 17, alt: '', horz: true },
-  { img: Img18, id: 18, alt: '', horz: true },
-  { img: Img19, id: 19, alt: '', horz: true },
-  { img: Img21, id: 21, alt: '', horz: true },
-  { img: Img22, id: 22, alt: '', horz: false },
-  { img: Img23, id: 23, alt: '', horz: true },
-  { img: Img24, id: 24, alt: '', horz: true },
-  { img: Img2, id: 2, alt: '', horz: true },
-  { img: Img3, id: 3, alt: '', horz: false },
-  { img: Img4, id: 4, alt: '', horz: false },
+  { img: Img1, id: 1, alt: '', horz: true, title: '' },
+  { img: Img24, id: 24, alt: '', horz: true, title: '' },
+  { img: Img5, id: 5, alt: '', horz: true, title: '' },
+  { img: Img6, id: 6, alt: '', horz: false, title: '' },
+  { img: Img7, id: 7, alt: '', horz: false, title: '' },
+  { img: Img8, id: 8, alt: '', horz: true, title: '' },
+  { img: Img9, id: 9, alt: '', horz: false, title: '' },
+  { img: Img10, id: 10, alt: '', horz: true, title: '' },
+  { img: Img25, id: 25, alt: '', horz: false, title: '' },
+  { img: Img11, id: 11, alt: '', horz: true, title: '' },
+  { img: Img12, id: 12, alt: '', horz: true, title: '' },
+  { img: Img13, id: 13, alt: '', horz: true, title: '' },
+  { img: Img14, id: 14, alt: '', horz: true, title: '' },
+  { img: Img15, id: 15, alt: '', horz: true, title: '' },
+  { img: Img20, id: 20, alt: '', horz: true, title: '' },
+  { img: Img16, id: 16, alt: '', horz: true, title: '' },
+  { img: Img17, id: 17, alt: 'Spacious bathroom featuring a freestanding white bathtub, dual wooden vanities with white countertops and round mirrors, and modern light fixtures. The room has large windows with ocean views and a light-colored tiled floor. A chandelier hangs from the ceiling.', horz: true, title: '' },
+  { img: Img18, id: 18, alt: '', horz: true, title: '' },
+  { img: Img19, id: 19, alt: '', horz: true, title: '' },
+  { img: Img21, id: 21, alt: '', horz: true, title: '' },
+  { img: Img22, id: 22, alt: '', horz: false, title: '' },
+  { img: Img23, id: 23, alt: '', horz: true, title: '' },
+  { img: Img2, id: 2, alt: '', horz: true, title: 'Corporate' },
+  { img: Img3, id: 3, alt: '', horz: false, title: '' },
+  { img: Img4, id: 4, alt: '', horz: false, title: '' },
 ]
 ---
 
 <style>
   .images {
     display: flex;
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 4rem;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: auto;
@@ -87,18 +88,15 @@ const images = [
       flex-basis: 100%;
     }
   }
-  /* .horz {
-    height: 300px;
-    width: 500px;
+  .descriptor-text {
+    margin-top: 0.5rem;
+    font-weight: 300;
   }
-  .vert {
-    height: 300px;
-    width: 300px;
-  } */
+
+  /* temporary, to help troubleshooting */
   .image-container:hover .indicator {
     display: block;
   }
-
   .indicator {
     position: absolute;
     background-color: rgb(222, 222, 222);
@@ -107,23 +105,32 @@ const images = [
     display: none;
     font-size: 3rem;
   }
+    /* .horz {
+    height: 300px;
+    width: 500px;
+  }
+  .vert {
+    height: 300px;
+    width: 300px;
+  } */
 </style>
 <BaseLayout>
   <MiniBanner title="Portfolio" />
   <article>
     <div class="images">
       {
-        images.map((img) => {
+        images.map(({img, id, alt, horz, title}) => {
           return (
             <div class="image-container">
-              <div class="indicator">{img.id}</div>
-              <a data-fslightbox href={img.img.src}>
+              <div class="indicator">{id}</div>
+              <a data-fslightbox href={img.src}>
                 <Image
-                  src={img.img}
-                  alt={img.alt}
-                  class={'image ' + (img.horz ? 'horz' : 'vert')}
+                  src={img}
+                  alt={alt}
+                  class={'image ' + (horz ? 'horz' : 'vert')}
                 />
               </a>
+                <div class="descriptor-text h5">{title}</div>
             </div>
           )
         })

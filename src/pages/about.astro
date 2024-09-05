@@ -4,15 +4,35 @@ import MiniBanner from '../components/MiniBanner.astro'
 import { Image } from 'astro:assets'
 import gina from '../images/gina.jpg'
 import colorImage from '../images/IMG_5535.webp'
+import before1 from '../images/beforeafter/maple valley before1.webp'
+import before2 from '../images/beforeafter/maple valley before2.webp'
+import after1 from '../images/beforeafter/maple valley after1.webp'
+import after2 from '../images/beforeafter/maple valley after2.webp'
 ---
 
 <style>
   .container {
     display: flex;
-    gap: 3rem;
+  }
+  .beforeafter-container {
+    flex-direction: column;
+  }
+  .beforeafter-container h3 { 
+    text-align: center;
+    margin-top: 3rem;
+  }
+  .beforeafter {
+    display: flex;
+    gap: 2rem;
+  }
+  .before, .after {
+    height: 400px;
+    object-fit: cover;
+    flex-basis: 50%;
+    min-width: 0;
   }
   .gina-image {
-    margin-right: 2.5rem;
+    margin-right: 3rem;
     margin-bottom: 1rem;
     height: 200px;
     width: 200px;
@@ -21,10 +41,12 @@ import colorImage from '../images/IMG_5535.webp'
   .color-image {
     width: 40%;
     height: auto;
+    object-fit: cover;
   }
   @media all and (max-width: 768px) {
     .container {
       display: block;
+      line-height: 0; /* fixes minor margin error on mobile */
     }
     .gina-image {
       float: left;
@@ -95,6 +117,28 @@ import colorImage from '../images/IMG_5535.webp'
           alt="beautiful modern bedroom. Blue chaise lounge with decorative pillows in the foreground, modern four-poster bed in the background."
           class="color-image"
         />
+      </div>
+    </div>
+    <hr />
+
+    <div class="content-block">
+      <div class="beforeafter-container container">
+        <div class="content-block-inner">
+          <h2>The Transformation</h2>
+          <p>
+            See the difference Belle Maison can make. Here’s a simple demonstration of how we can help create your new home.
+          </p>
+          <h3>Before</h3>
+          <div class="beforeafter">
+            <Image src={before1} alt="a dated-looking kitchen with stained wooden cabinets, a dark granite countertop, and hanging lamps" class="before" />
+            <Image src={before2} alt="a dated-looking kitchen with stained wooden cabinets and a fridge that protrudes into the room" class="before" />
+          </div>
+          <h3>After</h3>
+          <div class="beforeafter">
+            <Image src={after1} alt="a sleek, modern kitchen with all white cabinetry. Some cabinets have glass panes and lights inside which illuminate decorative china. A set of three chairs sit by the center island. The countertops are white quartz." class="after" />
+            <Image src={after2} alt="a sleek, modern kitchen with white cabinetry and a fridge that merges seemlessly into the surrounding cabinets. Modern chairs sit at the cabinet." class="after" />
+          </div>
+        </div>
       </div>
     </div>
   </article>

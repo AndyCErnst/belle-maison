@@ -68,7 +68,7 @@ html {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: #000000;
   transition: opacity;
   transition-duration: 400ms;
@@ -121,7 +121,6 @@ h4,
 .h4,
 h5,
 .h5 {
-  font-weight: 400;
   font-style: normal;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -227,7 +226,6 @@ button:hover {
 }
 a,
 a:visited {
-  font-weight: 500;
   color: var(--accent1);
   text-decoration: none;
 }
@@ -266,7 +264,7 @@ hr {
   max-width: 100%;
   margin: 8rem auto;
   padding: 0;
-  border-top: 4px solid var(--primary2);
+  border-top: 10px double var(--primary2);
   color: var(--primary2);
   text-align: center;
   overflow: visible;
@@ -276,7 +274,7 @@ hr:after {
   content: url('../images/logo.svg');
   display: inline-block;
   position: relative;
-  top: -3.6rem;
+  top: -3.5rem;
   padding: 0 0.1em;
   background: var(--bgColor);
 }
