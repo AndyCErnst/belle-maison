@@ -32,9 +32,7 @@ import ContactInfo from '../components/ContactInfo.astro'
 </div>
 
 <script>
-  function toggle(e) {
-    console.log('toggle')
-    console.log('el is ', e.currentTarget)
+  function toggle() {
     document.querySelector('body')?.classList.toggle('no-document-scroll')
     document.querySelector('.nav')?.classList.toggle('expanded')
   }
