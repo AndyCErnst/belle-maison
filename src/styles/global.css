@@ -26,12 +26,6 @@
 }
 
 @font-face {
-  font-family: 'Apple Chancery';
-  font-style: normal;
-  font-weight: normal;
-  src: local('/fonts/Apple Chancery'), url('/fonts/Apple Chancery.woff') format('woff');
-}
-@font-face {
   font-family: 'Gloock';
   font-style: normal;
   font-weight: normal;
@@ -271,7 +265,7 @@ hr {
 }
 hr:after {
   width: 5rem;
-  content: url('../images/logo.svg');
+  content: url('../images/logo/logo.svg');
   display: inline-block;
   position: relative;
   top: -3.5rem;
