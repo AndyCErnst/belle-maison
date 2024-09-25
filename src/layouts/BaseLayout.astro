@@ -2,13 +2,13 @@
 import '../styles/global.css'
 import Navigation from '../components/Navigation.astro'
 import Footer from '../components/Footer.astro'
+const { title } = Astro.props
 ---
-
-<!doctype html lang="en">
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Belle Maison Interior Design</title>
+    <title>Belle Maison Interior Design {title ? '- ' + title : ''}</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

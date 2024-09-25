@@ -221,7 +221,6 @@ button:hover {
 a,
 a:visited {
   color: var(--accent1);
-  text-decoration: none;
 }
 a:hover,
 a:focus {
