@@ -30,20 +30,21 @@
   font-style: normal;
   font-weight: normal;
   src: local('/fonts/Gloock-Regular.ttf'), url('/fonts/Gloock-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 300;
-  src: url('/fonts/NotoSans-Light.ttf') format('truetype');
-  /* src: local('/fonts/NotoSans-Light.ttf'), url('/fonts/NotoSans-Light.ttf') format('ttf'); */
+  src: local('/fonts/NotoSans-Light.ttf'), url('/fonts/NotoSans-Light.ttf') format('ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 600;
-  src: url('/fonts/NotoSans-SemiBold.ttf') format('truetype');
-  /* src: local('/fonts/NotoSans-SemiBold.ttf'), url('/fonts/NotoSans-SemiBold.ttf') format('ttf'); */
+  src: local('/fonts/NotoSans-SemiBold.ttf'), url('/fonts/NotoSans-SemiBold.ttf') format('ttf');
+  font-display: swap;
 }
 
 /*#region base*/
