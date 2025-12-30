@@ -2,13 +2,20 @@
 import '../styles/global.css'
 import Navigation from '../components/Navigation.astro'
 import Footer from '../components/Footer.astro'
-const { title } = Astro.props
+const {
+  title,
+} = Astro.props;
+const description = "Belle Maison Interior Design, led by Gina Schorr, offers luxury interior design services in the Seattle area. We specialize in creating beautiful, comfortable spaces that reflect your personal style.";
+const siteUrl = "https://bellemaisoninteriordesign.com";
+const image = `${siteUrl}/apple-touch-icon.png`;
+const canonical = `${siteUrl}${Astro.url.pathname}`;
+const pageTitle = title ? `Belle Maison Interior Design - ${title}` : "Belle Maison Interior Design - Seattle's Premier Interior Design Firm";
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Belle Maison Interior Design {title ? '- ' + title : ''}</title>
+    <title>Belle Maison Interior Design{title ? ' - ' + title : ''}</title>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -20,42 +27,26 @@ const { title } = Astro.props
     <meta name="theme-color" content="#515853" />
 
     <!-- meta tags -->
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Gina Schorr" />
-    <meta
-      name="description"
-      content="Belle Maison Interior Design, led by Gina Schorr, offers luxury interior design services in the Seattle area. We specialize in creating beautiful, comfortable spaces that reflect your personal style."
-    />
-    <meta
-      name="keywords"
-      content="Belle Maison Interior Design, interior design Seattle, luxury interior design, space planning, kitchen remodeling, bathroom remodeling, color consultations, custom window treatments, art selection, staging"
-    />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
     <meta name="robots" content="index, follow" />
-    <meta
-      property="og:title"
-      content="Belle Maison Interior Design - Seattle's Premier Interior Design Firm"
-    />
-    <meta
-      property="og:description"
-      content="For over a decade, Belle Maison Interior Design has been dedicated to delivering luxury, beauty, and comfort in every project. Let us bring your vision to life."
-    />
+
+    <meta property="og:site_name" content="Belle Maison Interior Design" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bellemaisoninteriordesign.com/" />
-    <meta
-      property="og:image"
-      content="https://bellemaisoninteriordesign.com/apple-touch-icon.png"
-    />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="en_US" />
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Belle Maison Interior Design" />
-    <meta
-      name="twitter:description"
-      content="Belle Maison Interior Design, led by Gina Schorr, specializes in creating beautiful, personalized spaces in the Seattle area."
-    />
-    <meta
-      name="twitter:image"
-      content="https://bellemaisoninteriordesign.com//apple-touch-icon.png"
-    />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <script type="application/ld+json" is:inline>{JSON.stringify({ "@context": "https://schema.org", "@type": "LocalBusiness", "name": "Belle Maison Interior Design", "image": image, "url": siteUrl })}</script>
 
   </head>
   <body>
