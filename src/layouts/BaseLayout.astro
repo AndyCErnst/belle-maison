@@ -46,7 +46,7 @@ const pageTitle = title ? `Belle Maison Interior Design - ${title}` : "Belle Mai
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
-    <script type="application/ld+json" is:inline>{JSON.stringify({ "@context": "https://schema.org", "@type": "LocalBusiness", "name": "Belle Maison Interior Design", "image": image, "url": siteUrl })}</script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({ "@context": "https://schema.org", "@type": "LocalBusiness", "name": "Belle Maison Interior Design", "image": image, "url": siteUrl })}></script>
 
   </head>
   <body>
