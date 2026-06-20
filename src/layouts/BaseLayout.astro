@@ -5,11 +5,11 @@ import Footer from '../components/Footer.astro'
 const {
   title,
 } = Astro.props;
-const description = "Belle Maison Interior Design, led by Gina Schorr, offers luxury interior design services in the Seattle area. We specialize in creating beautiful, comfortable spaces that reflect your personal style.";
+const description = "Charlotte, NC-based Belle Maison Interior Design, led by Gina Schorr, offers luxury residential interior design services with elegant, personalized spaces that reflect your unique style.";
 const siteUrl = "https://bellemaisoninteriordesign.com";
 const image = `${siteUrl}/apple-touch-icon.png`;
 const canonical = `${siteUrl}${Astro.url.pathname}`;
-const pageTitle = title ? `Belle Maison Interior Design - ${title}` : "Belle Maison Interior Design - Seattle's Premier Interior Design Firm";
+const pageTitle = title ? `Belle Maison Interior Design - ${title} | Charlotte, NC` : "Belle Maison Interior Design - Charlotte's Premier Interior Design Firm";
 ---
 <!doctype html>
 <html lang="en">
@@ -30,6 +30,10 @@ const pageTitle = title ? `Belle Maison Interior Design - ${title}` : "Belle Mai
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Gina Schorr" />
     <meta name="description" content={description} />
+    <meta name="keywords" content="Charlotte interior designer, luxury interior design, residential interior design, Charlotte NC, Belle Maison Interior Design" />
+    <meta name="geo.region" content="US-NC" />
+    <meta name="geo.placename" content="Charlotte" />
+    <meta name="geo.position" content="35.2271;-80.8431" />
     <link rel="canonical" href={canonical} />
     <meta name="robots" content="index, follow" />
 
@@ -46,7 +50,20 @@ const pageTitle = title ? `Belle Maison Interior Design - ${title}` : "Belle Mai
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
-    <script type="application/ld+json" is:inline set:html={JSON.stringify({ "@context": "https://schema.org", "@type": "LocalBusiness", "name": "Belle Maison Interior Design", "image": image, "url": siteUrl })}></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Belle Maison Interior Design",
+      "description": description,
+      "image": image,
+      "url": siteUrl,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Charlotte",
+        "addressRegion": "NC",
+        "addressCountry": "US"
+      }
+    })}></script>
 
   </head>
   <body>
